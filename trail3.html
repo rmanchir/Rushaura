@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RUSHAURA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1d0219;
+            text-align: center;
+            color: white;
+        }
+        .header {
+            background-color: #444444;
+            color: white;
+            padding: 11px;
+            font-size: 24px;
+            font-family: 'Georgia', serif;  
+        }
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 220px;
+            height: auto;
+        }
+@media (max-width: 768px) {
+    .header {
+        font-size: 14px; /* Reduce title size */
+        padding: 15px 0;
+        text-align: center;
+        position: relative;
+    }
+    .logo {
+        position: absolute;
+        top: 10px;
+        left: 0px;
+        width: 100px; 
+        height: auto;
+    }
+    .tagline {
+        font-size: 12px; /* Reduce tagline size */
+        color: #ffffff;
+    }
+}
+        .nav {
+            display: flex;
+            justify-content: center;
+            background-color: #111;
+            padding: 10px;
+        }
+        .nav button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 10px 15px;
+            transition: background-color 0.3s;
+        }
+        .nav button:hover {
+            background-color: #f39c12;
+            border-radius: 5px;
+        }
+        .tagline {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        .content {
+            margin: 20px;
+        }
+        .button {
+            background-color: #f39c12;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #04b9d0;
+        }
+        h2 {
+    background-color: #7a0968; /* Dark background */
+    color: white; /* White text */
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+        .package-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+            /* margin-top: 10px; */
+        }
+        .package-container .button {
+            margin-top: 15px;
+        }
+        .package-list {
+            text-align: left;
+            list-style-position: inside;
+            padding: 0;
+            margin: 0;
+        }
+        .faq-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .faq-list {
+            list-style-position: inside;
+            text-align: center;
+        }
+        /* .about-section {
+            background-color: rgb(68, 66, 66);
+            color: white;
+            padding: 20px;
+        } */
+    </style>
+    <script>
+        function showPage(page) {
+            const content = document.getElementById("content");
+            if (page === "home") {
+                content.innerHTML = `
+                    <p class="tagline">Effortless Luxury in Every Frame.</p>
+                    <p style="text-align: center; font-size: 20px; font-weight: bold; margin: 20px; color: #111;">
+                        Every moment holds a story, and we bring it to life instantly. Rushaura blends luxury with creativity, crafting cinematic memories that last forever.
+                    </p>
+                    <h2>Book a Professional</h2>
+                    <p>Select a professional to start your reel-making journey.</p>
+                    <button class="button" onclick="showPage('packages')">View Packages</button>
+                `;
+            } else if (page === "about") {
+                content.innerHTML = `
+                    <h2>✨ About Rushaura</h2>
+                    <p>At Rushaura, we redefine event videography with effortless luxury and instant storytelling. Every moment deserves to be captured with precision, elegance, and creativity—right as it happens.</p>
+                    <p>From grand celebrations to intimate gatherings, we specialize in delivering professionally edited, high-quality videos instantly, ensuring that your most precious memories are preserved with style and sophistication.</p>
+                    <p>🎥 Seamless. Stunning. Timeless.</p>
+                    <p>Experience the art of instant event videography.</p>
+                `;
+            } else if (page === "packages") {
+                content.innerHTML = `
+ <h2>Our Packages</h2> 
+                    <div class="package-container">
+                        <h3>Hourly Package - ₹1600 per hour</h3>
+                        <ul class="package-list">
+                            <li>Includes a 60 seconds reel</li>
+                            <li>Get an Expert Reelmaker</li>
+                            <li>Live Stories</li>
+                            <li>RAW Content</li>
+                            <li>Instant Reels Delivery</li>
+                            <li>Well Trained Professionals</li>
+                        </ul>
+
+                        <button class='button' onclick='goToBooking()'>Book Now</button>
+                    </div>
+                    <div class="package-container">
+                        <h3>One Day Package - ₹4,999 + GST</h3>
+                        <ul class="package-list">
+                            <li>No Flashoot Logo</li>
+                            <li>Upto 3 Hours</li>
+                            <li>2 Reels Provided</li>
+                            <li>Live Stories</li>
+                            <li>RAW Content</li>
+                            <li>Mobile Portrait Pictures</li>
+                            <li>Instant Reels and Delivery</li>
+                            <li>Well Trained Professionals</li>
+                        </ul>
+                        <button class='button' onclick='goToBooking()'>Book Now</button>
+                    </div>
+                `;
+            } else if (page === "services") {
+                content.innerHTML = "<h2>Our Services</h2><p>We provide top-quality reel-making services, including editing, filming, and post-production.</p>";
+            } else if (page === "support") {
+                content.innerHTML = `
+                    <h2>Support</h2>
+                    <p>Need help? Contact our support team anytime for assistance.</p>
+                    <h3>Contact Information</h3>
+                    <p>Email: support@rushaura.com</p>
+                    <p>Phone: +91-9100217060</p>
+                    <p>Working Hours: 9 AM - 7 PM (IST)</p>
+        <p><a href="https://wa.me/9100217060" target="_blank" style="color: #25D366; font-weight: bold; text-decoration: none;">Chat with us on WhatsApp</a></p>
+                    <h3>FAQs</h3>
+                    <ul class="package-list">
+                        <li><b>How do I book a package?</b></li>
+                        <p>Booking with Rushaura is simple! You can book a package by visiting the Packages section on our website. Simply select the package that suits your needs, click "Book Now," and fill in your event details. We’ll confirm your booking shortly after.</p>
+                        <li><b>What payment methods are accepted?</b></li>
+                        <p>We’ve got you covered! Pay seamlessly via UPI, debit cards, or digital wallets—whatever works best for you.</p>
+                        <li><b>Can I reschedule or cancel my booking?</b></li>
+                        <p>We currently do not support rescheduling. However, cancellations are allowed at least 4 hours before the event time. The amount will be refunded to your account. To cancel, simply call or WhatsApp us at our contact number.</p>
+                    </ul>
+                `;
+            }
+            // <h3>Live Chat Support</h3>
+            //         <p>Chat with our support team for instant assistance.</p>
+            //         <h3>Help Center</h3>
+            //         <p>Visit our Help Center for detailed guides and FAQs.</p>
+        }
+        function validateForm(event) {
+            event.preventDefault();
+            const phoneNumber = document.getElementById("phone");
+            if (phoneNumber.value.length !== 10) {
+                alert("Phone number must be exactly 10 digits.");
+                phoneNumber.style.border = "2px solid red";
+                return;
+            } else {
+                phoneNumber.style.border = "1px solid #ccc";
+            }
+            goToBilling();
+        }
+        // function goToBooking() {
+        //     //alert("Redirecting to booking page...");
+        //     let content = document.getElementById("content");
+        //     content.innerHTML = `<h2>Booking Page</h2>
+        //         <form onsubmit='goToBilling(); return false;'>
+        //             <label>Name:</label><input type='text' required><br>
+        //             <label>Email:</label><input type='email' required><br>
+        //             <label>Phone Number:</label><input type='tel' required><br>
+        //             <label>Select Date:</label><input type='date' required><br>
+        //             <label>Select Time:</label><input type='time' required><br>
+        //             <label>Venue Details:</label><input type='text' required><br>
+        //             <label>Type of Occasion:</label><input type='text' required><br>
+        //             <label>Song Preferences:</label><input type='text' required><br>
+        //             <button class='button' type='submit'>Proceed to Billing</button>
+        //         </form>`;
+        // }
+        function goToBooking() {
+            document.getElementById("content").innerHTML = `
+                <h2>Booking Page</h2>
+                <form class='form-container' onsubmit='validateForm(event)'>
+                    <label>Full Name:</label><input type='text' placeholder='enter your Full Name'required><br>
+                    <label>Email:</label><input type='email'placeholder='Enter your Email ID' required><br>
+                    <label>Phone Number:</label><input type='tel' id='phone' required><br>
+                    <label>Select Date:</label><input type='date' required><br>
+                    <label>Select Time:</label><input type='time' required><br>
+                    <label>Venue Details:</label><input type='text' placeholder='Venue Name' required><br>
+                    <label>Area:</label><input type='text' required><br>
+                    <label>City:</label><input type='text' required><br>
+                    <label>Pincode:</label><input type='text' required><br>
+                    <label>Type of Occasion:</label><input type='text' required><br>
+                    <label>Song Preferences (Optional):</label><input type='text'><br>
+                    <button class='button' type='submit'>Proceed to Billing</button>
+                </form>`;
+        }
+        function goToBilling() {
+            let content = document.getElementById("content");
+            content.innerHTML = `<h2>Billing Page</h2>
+                <p>We accept only Debit Cards and UPI payments.</p>
+                <label>Payment Method:</label>
+                <select required>
+                    <option value=''>Select</option>
+                    <option value='debit-card'>Debit Card</option>
+                    <option value='upi'>UPI</option>
+                </select><br>
+                <button class='button'>Complete Payment</button>`;
+        }
+    </script>
+</head>
+<body>
+    <div class="header"><h1>RUSHAURA</h1>
+        <p>Book professional reel makers instantly!</p>
+        <img src="Logo.PNG" alt="RushAura Logo" class="logo">
+    </div>
+    <div class="nav">
+        <button onclick="showPage('home')">Home</button>
+        <button onclick="showPage('about')">About</button>
+        <button onclick="showPage('services')">Services</button>
+        <button onclick="showPage('packages')">Packages</button>
+        <button onclick="showPage('support')">Support</button>
+    </div>
+    <div class="content" id="content">
+        <h1><i>Effortless Luxury in Every Frame!!</i></h1>
+        <p style="text-align: center; font-size: 20px; font-weight: bold; margin: 20px; color: #ffffff;">
+            Every moment holds a story, and we bring it to life instantly. Rushaura blends luxury with creativity, crafting cinematic memories that last forever.
+        </p>
+        <h3>Book a Professional</h3>
+        <p>Select a professional to start your reel-making journey.</p>
+        <button class="button" onclick="showPage('packages')">View Packages</button>
+    </div>
+</body>
+</html>
